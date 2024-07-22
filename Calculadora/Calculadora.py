@@ -67,12 +67,11 @@ def resta(num):
         return
     elif resultado==0:
         resultado = float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
     else:
         resultado -= float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
+
+    numeroPantalla.set(str(resultado).rstrip('0').rstrip('.') if '.' in str(resultado) else str(resultado))
+    nuevos_numeros = False
 
 def mult(num):
     global operador
@@ -84,12 +83,12 @@ def mult(num):
         return
     elif resultado!=0:
         resultado *= float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
     else:
         resultado = float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
+
+    numeroPantalla.set(str(resultado).rstrip('0').rstrip('.') if '.' in str(resultado) else str(resultado))
+    nuevos_numeros = False
+
 
 def div(num):
     global operador
@@ -101,12 +100,13 @@ def div(num):
         return
     elif resultado == 0:
         resultado = float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
     else:
         resultado /= float(num)
-        numeroPantalla.set(resultado)
-        nuevos_numeros = False
+
+    numeroPantalla.set(str(resultado).rstrip('0').rstrip('.') if '.' in str(resultado) else str(resultado))
+    nuevos_numeros = False
+
+
 def el_resultado():
     global resultado
     global operador
